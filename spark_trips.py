@@ -13,3 +13,7 @@ print trips10RDD
 import 
 tripsByYearRDD = tripsRDD.map(lambda ((c,r,d),v): (d[:4], v)).reduceByKey(lambda x, y: x+y )
 print tripsByYearRDD
+
+#aggregate by month
+tripsByMonthRDD = tripsRDD.map(lambda ((c,r,d),v): (d[:4] + '-' + d[4:6], v)).reduceByKey(lambda x, y: x+y)
+print tripsByMonthRDD.collect()
