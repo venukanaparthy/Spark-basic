@@ -1,6 +1,5 @@
 #Average dialy taxi speed
 from pyspark import SparkContext, StorageLevel, SparkConf
-import boto
 import os
 conf = (SparkConf()
          .setMaster("local")
